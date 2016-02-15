@@ -86,3 +86,16 @@ def percentile_for_characters(data, name):
              'percentile': 100 - stats.percentileofscore(
                 data['rank'], datum['rank'])})
     return percentile_stats
+
+
+def data_per_class(data):
+    """Separate the data per class."""
+    classes_dict = {'Witch': [], 'Shadow': [], 'Ranger': [], 'Duelist': [],
+                    'Marauder': [], 'Templar': [], 'Scion': []}
+    for datum in data:
+        classes_dict[datum['class'].decode('utf-8')].append(datum)
+
+    for key, value in classes_dict.items():
+        classes_dict[key] = np.asarray(value)
+
+    return classes_dict
