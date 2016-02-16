@@ -1,9 +1,9 @@
 """Playing around."""
 import argparse
 import pprint
-from source.analysis import (read_data, stats_of_col,
-                             percentile_for_characters, data_per_class)
-from source.settings import CHOICES_LIST
+from source.modules.analysis import (
+    read_data, stats_of_col, percentile_for_characters, data_per_class)
+from source.modules.settings import CHOICES_LIST
 
 
 def main(args):
